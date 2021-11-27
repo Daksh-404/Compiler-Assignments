@@ -1,0 +1,30 @@
+insert
+i local int 1X75 32
+
+insert
+j local int 1X876 43
+
+insert
+j local string 2xVJJ 65
+
+update
+nume global int 21XJVSJ 31
+
+find
+i
+
+delete
+j
+
+find
+j
+
+delete
+if
+
+update
+i local int 1X75 33
+
+find 
+i
+

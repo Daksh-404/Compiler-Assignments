@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+
+#define val 'c'
+#define vca 'd'
+#define val 104.4
+
+int a;
+char b = 'c';
+float s = 5.465;
+
+float function1 (int a, char b)
+{
+    int x = 5+(6-7%2%3)&2|7;
+    float c = 435.4;
+
+    for(int j = 0; a < 5 ; j++)
+    {
+      int a = 5;
+
+      for(int g = 4; g < 7; g++)
+      {
+        vodbv = 5;
+
+        if(g < 6)
+        {
+           for(int j  = 5; j < 5; j++)
+           {
+             int exp1 = 4;
+           }
+
+           float c = 435.56;
+
+           printf(324);
+           int*c;
+        }
+        else
+        {
+            int b = 5;
+
+            if(v < 5)
+            {
+               j  = 5;
+            }
+        }
+      }
+    
+      int dfsv = 345.345;
+    }
+
+    do
+    {
+      for(int j = 0; j < 5; j++)
+      {
+          printf("hello -", j);
+      }
+
+    }while(c< d);
+
+    int rs = function2(43,67.453, 'c');
+    char*d = arr;
+
+    return (435+56)-456*54*5|2;
+}
+
+
+int function2 (int a, float b, char* d)
+{
+  int fjvldf = 43978;
+
+  return a;
+}
+
+int main()
+{
+  int ans = function1(4,'r');
+  return 0;
+}

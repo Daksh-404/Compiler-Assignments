@@ -1,0 +1,4 @@
+yacc -d gram.y
+lex gram.l
+gcc lex.yy.c y.tab.c -ll -ly -o parse
+./parse

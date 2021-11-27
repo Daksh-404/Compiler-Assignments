@@ -1,0 +1,4 @@
+yacc -d calc-3.y
+lex calc-3.l
+gcc lex.yy.c y.tab.c -ll -ly -o calculate
+./calculate

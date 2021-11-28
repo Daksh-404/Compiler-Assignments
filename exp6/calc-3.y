@@ -21,9 +21,9 @@ char tmp[20];
 
 %%
 
-S	: S ID '=' E '\n' { printf("%s = %s\n", $2, $4); }
-	| S E '\n' { }
-	| S '\n' { }
+S	: S ID '=' E  { printf("%s = %s\n", $2, $4); }
+	| S E  
+	| S  
 	| 
 	;
 E	: DIGIT { $$ = yylval.str; }

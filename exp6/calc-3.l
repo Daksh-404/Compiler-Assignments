@@ -12,7 +12,7 @@ letter [A-Za-z_]
 {num}+      { yylval.str = strdup(yytext); return DIGIT; }
 {letter}[A-Za-z0-9_]*   { yylval.str = strdup(yytext); return ID; }
 [+-/*\n]    { return *yytext; }
-[ \t]	    { }
+[ \t\n]	    { }
 .           { return yytext[0]; }
 
 %%

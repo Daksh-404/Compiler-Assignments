@@ -1,22 +1,28 @@
 %{
-#include <stdlib.h>
-#include <string.h>
 #include "y.tab.h"
-void yyerror(char *);
+#include <string.h>
 %}
-num [0-9]
-letter [A-Za-z_]
+
+relop >=|<=|>|<|==|!=
+number [0-9]+
 
 %%
 
-{num}+      { yylval.str = strdup(yytext); return DIGIT; }
-{letter}[A-Za-z0-9_]*   { yylval.str = strdup(yytext); return ID; }
-[+-/*\n]    { return *yytext; }
-[ \t]	    { }
-.           { return yytext[0]; }
+[\n\t ]+	                   {;}
+"if"                           {return IF;}
+"while"                        {return WHILE;}
+"for"                          {return FOR;}
+"else"                         {return ELSE;}
+"int"|"string"|"char"|"double" {return TYPE;}
+[a-z]([a-z]|[0-9])* 		   {yylval.tuple.result = strdup(yytext); return identifier;}
+[0-9]+                         {yylval.tuple.num= atoi(yytext); return number;}
+{relop}                        {yylval.tuple.arg1 =strdup(yytext); return RELOP;}
+[-+*=/;%(){}]                  {return yytext[0];}
+
 
 %%
 
-int yywrap(void) {
+int yywrap(void)
+{
 	return 1;
 }

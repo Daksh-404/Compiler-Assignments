@@ -1,0 +1,14 @@
+--INTERMEDIATE THREE ADDRESS CODE--
+
+t1 = 4 * 4
+t2 = t1 + 5
+i = t2
+j = 19
+i++
+t3 = 2 + 3
+t4 = 3 / t3
+t5 = j == t4
+IfZ t5 Goto L1 
+t6 = 10 + 2
+b = t6
+L1 :

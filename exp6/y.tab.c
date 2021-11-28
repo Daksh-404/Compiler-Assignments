@@ -1433,7 +1433,7 @@ yyreduce:
 
   case 6:
 #line 52 "test.y"
-    { labels = Label(); (yyvsp[(5) - (5)].tuple).arg2 = labels; fprintf(yyout,"if %s Goto %s\n",(yyvsp[(5) - (5)].tuple).result,(yyvsp[(5) - (5)].tuple).arg2);}
+    { labels = Label(); (yyvsp[(2) - (5)].tuple).arg2 = labels; fprintf(yyout,"if not %s Goto %s\n",(yyvsp[(5) - (5)].tuple).result,(yyvsp[(2) - (5)].tuple).arg2);}
     break;
 
   case 7:
@@ -1448,7 +1448,7 @@ yyreduce:
 
   case 9:
 #line 53 "test.y"
-    { labels = Label(); (yyvsp[(1) - (4)].tuple).arg2 = labels; fprintf(yyout,"if %s Goto %s\n",(yyvsp[(4) - (4)].tuple).result,(yyvsp[(1) - (4)].tuple).arg2);}
+    { labels = Label(); (yyvsp[(1) - (4)].tuple).arg2 = labels; fprintf(yyout,"if not %s Goto %s\n",(yyvsp[(4) - (4)].tuple).result,(yyvsp[(1) - (4)].tuple).arg2);}
     break;
 
   case 10:
@@ -1458,7 +1458,7 @@ yyreduce:
 
   case 11:
 #line 54 "test.y"
-    { labels = Label(); (yyvsp[(4) - (4)].tuple).arg2 = labels; fprintf(yyout,"IfZ %s Goto %s \n",(yyvsp[(4) - (4)].tuple).result,labels);    }
+    { labels = Label(); (yyvsp[(4) - (4)].tuple).arg2 = labels; fprintf(yyout,"If not %s Goto %s \n",(yyvsp[(4) - (4)].tuple).result,labels);    }
     break;
 
   case 12:
@@ -1468,7 +1468,7 @@ yyreduce:
 
   case 13:
 #line 55 "test.y"
-    { labels = Label(); (yyvsp[(3) - (3)].tuple).arg2 = labels; fprintf(yyout,"IfZ %s Goto %s \n",(yyvsp[(3) - (3)].tuple).result,labels);    }
+    { labels = Label(); (yyvsp[(3) - (3)].tuple).arg2 = labels; fprintf(yyout,"If not %s Goto %s \n",(yyvsp[(3) - (3)].tuple).result,labels);    }
     break;
 
   case 14:

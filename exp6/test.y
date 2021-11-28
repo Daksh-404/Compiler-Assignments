@@ -49,10 +49,10 @@
 line :  assignment ';' {;}
      | line assignment ';'{;}
      | line exp ';' {;}
-     | line WHILE {labels = Label(); $2.arg1 = labels; fprintf(yyout,"%s:\n",$2.arg1);} '(' C { labels = Label(); $5.arg2 = labels; fprintf(yyout,"if %s Goto %s\n",$5.result,$5.arg2);} ')' '{' line '}' { fprintf(yyout,"Goto %s\n %s:\n",$2.arg1,$2.arg2);}
-     | WHILE {labels = Label(); $1.arg1 = labels; fprintf(yyout,"%s:\n",$1.arg1);} '(' C { labels = Label(); $1.arg2 = labels; fprintf(yyout,"if %s Goto %s\n",$4.result,$1.arg2);} ')' '{' line '}' { fprintf(yyout,"Goto %s\n %s:\n",$1.arg1,$1.arg2);}
-     | line IF '(' C { labels = Label(); $4.arg2 = labels; fprintf(yyout,"IfZ %s Goto %s \n",$4.result,labels);    }   ')' '{' line '}' { fprintf(yyout,"%s :\n",$4.arg2);}
-     | IF '(' C { labels = Label(); $3.arg2 = labels; fprintf(yyout,"IfZ %s Goto %s \n",$3.result,labels);    }   ')' '{' line '}' { fprintf(yyout,"%s :\n",$3.arg2);}
+     | line WHILE {labels = Label(); $2.arg1 = labels; fprintf(yyout,"%s:\n",$2.arg1);} '(' C { labels = Label(); $2.arg2 = labels; fprintf(yyout,"if not %s Goto %s\n",$5.result,$2.arg2);} ')' '{' line '}' { fprintf(yyout,"Goto %s\n %s:\n",$2.arg1,$2.arg2);}
+     | WHILE {labels = Label(); $1.arg1 = labels; fprintf(yyout,"%s:\n",$1.arg1);} '(' C { labels = Label(); $1.arg2 = labels; fprintf(yyout,"if not %s Goto %s\n",$4.result,$1.arg2);} ')' '{' line '}' { fprintf(yyout,"Goto %s\n %s:\n",$1.arg1,$1.arg2);}
+     | line IF '(' C { labels = Label(); $4.arg2 = labels; fprintf(yyout,"If not %s Goto %s \n",$4.result,labels);    }   ')' '{' line '}' { fprintf(yyout,"%s :\n",$4.arg2);}
+     | IF '(' C { labels = Label(); $3.arg2 = labels; fprintf(yyout,"If not %s Goto %s \n",$3.result,labels);    }   ')' '{' line '}' { fprintf(yyout,"%s :\n",$3.arg2);}
      ;
 
 assignment : TYPE identifier '=' exp { fprintf(yyout,"%s = %s\n",$2.result,$4.result);}
